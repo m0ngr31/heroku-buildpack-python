@@ -12,7 +12,8 @@ if [ ! "$SKIP_PIP_INSTALL" ]; then
     
     #which python (/app/.heroku/python/bin/python)
     curl -O https://s3.amazonaws.com/kodi-voice-share/python2.7-python-Levenshtein-0.12.0.tar.gz
-    tar -xvzf python2.7-python-Levenshtein-0.12.0.tar.gz -C /app/.heroku/python/lib/python2.7/site-pacakges/python-Levenshtein-0.12.0
+    mkdir /app/.heroku/python/lib/python2.7/site-packages/python-Levenshtein-0.12.0
+    tar -xvzf python2.7-python-Levenshtein-0.12.0.tar.gz -C /app/.heroku/python/lib/python2.7/site-packages/python-Levenshtein-0.12.0
     rm python2.7-python-Levenshtein-0.12.0.tar.gz
     
     
