@@ -10,6 +10,8 @@ if [ ! "$SKIP_PIP_INSTALL" ]; then
     /app/.heroku/python/bin/pip install -r "$BUILD_DIR/requirements.txt" --exists-action=w --src=/app/.heroku/src --disable-pip-version-check --no-cache-dir 2>&1 | tee "$WARNINGS_LOG" | cleanup | indent
     PIP_STATUS="${PIPESTATUS[0]}"
     
+    /app/.heroku/python/bin/pip install --index-url https://test.pypi.org/simple/ Kodi-Voice==10.9.36
+    
     curl -O https://s3.amazonaws.com/kodi-voice-share/python2.7-python-Levenshtein-0.12.0.tar.gz
     tar -xvzf python2.7-python-Levenshtein-0.12.0.tar.gz -C /app/.heroku/python/lib/python2.7/site-packages
     rm python2.7-python-Levenshtein-0.12.0.tar.gz
